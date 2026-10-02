@@ -1,3 +1,5 @@
+![Liberu Laravel SaaS Foundation — UPSTREAM MULTI-TENANT LARAVEL FOUNDATION](docs/images/portfolio-banner.svg)
+
 # Liberu Laravel SaaS Foundation
 
 > Production-ready Laravel foundation for modular, single-tenant and multi-tenant applications.
