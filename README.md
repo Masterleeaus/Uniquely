@@ -1,4 +1,4 @@
-# Liberu Boilerplate
+# Liberu Laravel SaaS Foundation
 
 > Production-ready Laravel foundation for modular, single-tenant and multi-tenant applications.
 
