@@ -12,6 +12,13 @@
 
 Liberu Boilerplate is the deployable reference host for the Liberu Composer ecosystem. It combines independently released capability, presentation, and theme packages while keeping application bootstrapping, environment configuration, panel composition, and cross-package tests in one place.
 
+## Product architecture and engineering highlights
+
+A modular Laravel SaaS foundation from the Liberu ecosystem, designed to compose application features from reusable packages and modules.
+
+- **Architecture:** The repository targets Laravel 13, Filament 5, and Livewire 4, with modular Composer components, theme/module development conventions, single- and multi-tenant options, and automated quality tooling.
+- **Distinctive engineering:** Its distinctive strength is package-level composability across a family of related SaaS applications; preserve Liberu project identity and upstream attribution.
+
 ## Key features
 
 - Jetstream authentication, profiles, sessions, two-factor authentication, passkeys, and social login
