@@ -6,17 +6,12 @@ on:
   pull_request:
     branches: [main]
 
-permissions:
-  contents: write
-
 jobs:
   install:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v5
-        with:
-          ref: codex/audit-dependency-resolution-20261004
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -29,31 +24,6 @@ jobs:
         with:
           node-version: 'latest'
           cache: 'npm'
-
-      - name: Resolve Composer audit updates
-        run: composer update laravel/framework league/commonmark league/flysystem phpseclib/phpseclib --with-all-dependencies --minimal-changes --no-interaction --no-progress --no-scripts
-        env:
-          COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ github.token }}"}}'
-        continue-on-error: true
-
-      - name: Commit resolved lockfile
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add composer.lock
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git commit -m "chore: resolve Composer audit dependencies"
-          git push origin HEAD:codex/audit-dependency-resolution-20261004
-
-      - name: Upload resolved lockfile
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: resolved-composer-lock
-          path: composer.lock
-          if-no-files-found: error
 
       - name: Get Composer cache directory
         id: composer-cache
