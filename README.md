@@ -2,13 +2,11 @@
 
 # Uniquely
 
-## Liberu Laravel SaaS Foundation
-
 <p align="center">
   <img src="docs/images/uniquely-architecture.svg" alt="Uniquely composition map from host application through Composer modules, themes, tenancy, and tests within the Liberu ecosystem." width="100%" />
 </p>
 
-> A modular Laravel composition host for assembling SaaS capabilities, themes, and tenancy-aware application surfaces.
+> A Liberu-based Laravel SaaS foundation for assembling capabilities, themes, and tenancy-aware application surfaces.
 
 Uniquely brings independently released Liberu modules, themes, contracts, and host-level configuration together in one reference application. It is designed for teams that want package-level reuse without losing visibility into bootstrapping, panel composition, environment configuration, and cross-package behavior.
 
