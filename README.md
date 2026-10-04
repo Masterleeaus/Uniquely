@@ -53,7 +53,7 @@ Uniquely is strongest as a composition and developer-experience asset: it shows 
 | Cross-package behaviour | `tests/` | architecture, module discovery, auth, tenancy, search, settings, theme and operational feature coverage |
 | Tooling | `.claude/skills/`, `AGENTS.md` | coverage/static-analysis guidance and project-specific development workflows |
 
-**Latest verification (2026-10-04).** The tested PR head [`41eba178036ae3cad36255c69a07ca2d3b7312ed`](https://github.com/Masterleeaus/Uniquely/commit/41eba178036ae3cad36255c69a07fb9c4c30c5a5093f36d) passed Composer metadata validation, dependency installation, `composer audit --locked`, Pint, static analysis, and the test suite in [workflow run 37183653563](https://github.com/Masterleeaus/Uniquely/actions/runs/37183653563): **203 passed, 12 skipped, 670 assertions**. The Codecov upload separately failed because the external service rejected a tokenless upload, and the Docker metadata job separately hit a GitHub API rate limit; this evidence does not claim all CI is green.
+**Latest verification (2026-10-04).** The tested PR head [`41eba178036ae3cad36255c69a07ca2d3b7312ed`](https://github.com/Masterleeaus/Uniquely/commit/41eba178036ae3cad36255c69a07ca2d3b7312ed) passed Composer metadata validation, dependency installation, `composer audit --locked`, Pint, static analysis, and the test suite in [workflow run 37183653563](https://github.com/Masterleeaus/Uniquely/actions/runs/37183653563): **203 passed, 12 skipped, 670 assertions**. The Codecov upload separately failed because the external service rejected a tokenless upload, and the Docker metadata job separately hit a GitHub API rate limit; this evidence does not claim all CI is green.
 
 ## Requirements
 
