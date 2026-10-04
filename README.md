@@ -1,8 +1,12 @@
-![Liberu Laravel SaaS Foundation — UPSTREAM MULTI-TENANT LARAVEL FOUNDATION](docs/images/portfolio-banner.svg)
+![Uniquely — Liberu modular Laravel composition host for SaaS capabilities, themes, tenancy, and tested package boundaries](docs/images/uniquely-banner.svg)
 
 # Uniquely
 
 ## Liberu Laravel SaaS Foundation
+
+<p align="center">
+  <img src="docs/images/uniquely-architecture.svg" alt="Uniquely composition map from host application through Composer modules, themes, tenancy, and tests within the Liberu ecosystem." width="100%" />
+</p>
 
 > A modular Laravel composition host for assembling SaaS capabilities, themes, and tenancy-aware application surfaces.
 
