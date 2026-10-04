@@ -12,27 +12,18 @@ Uniquely brings independently released Liberu modules, themes, contracts, and ho
 
 [![PHP](https://img.shields.io/badge/PHP-8.5-777BB4?logo=php&logoColor=white)](https://www.php.net/) [![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)](https://laravel.com/) [![Filament](https://img.shields.io/badge/Filament-5-FDAE4B)](https://filamentphp.com/) [![Livewire](https://img.shields.io/badge/Livewire-4-FB70A9)](https://livewire.laravel.com/)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
 ## What Uniquely makes possible
 
 | Capability | Implementation evidence |
 |---|---|
-| Modular capability graph | `composer.json`, `config/modules.php`, and tracked `modules/*/` packages compose reusable application capabilities with explicit manifests and dependencies. |
-| Theme and presentation composition | `themes/*/` packages provide tracked assets, compatibility metadata, inheritance, and safe fallback behavior. |
+| Module dependency and cycle validation | `config/modules.php`, `modules/*/module.json`, and the host ModuleRegistry validate declared dependencies, provider order, and cycles before boot. |
+| Theme compatibility and fallback | `themes/*/theme.json` metadata and the ThemeManager handle compatibility checks, inheritance, and safe fallback behavior. |
 | Host-level integration | `app/`, `config/`, and `routes/` contain the application shell, enabled package graph, panel/runtime policy, and integration points. |
 | Cross-package engineering evidence | `tests/`, `scripts/`, `.claude/skills/`, and `AGENTS.md` support architecture checks, publishing, coverage, static analysis, and development workflows. |
 
 Uniquely is strongest as a composition and developer-experience asset: it shows how a Laravel product family can share capabilities while retaining package ownership, release boundaries, and a visible application host.
-
-Liberu Boilerplate is the deployable reference host for the Liberu Composer ecosystem. It combines independently released capability, presentation, and theme packages while keeping application bootstrapping, environment configuration, panel composition, and cross-package tests in one place.
-
-## Product architecture and engineering highlights
-
-A modular Laravel SaaS foundation from the Liberu ecosystem, designed to compose application features from reusable packages and modules.
-
-- **Architecture:** The repository targets Laravel 13, Filament 5, and Livewire 4, with modular Composer components, theme/module development conventions, single- and multi-tenant options, and automated quality tooling.
-- **Distinctive engineering:** Its distinctive strength is package-level composability across a family of related SaaS applications; preserve Liberu project identity and upstream attribution.
 
 ## Key features
 
@@ -44,18 +35,21 @@ A modular Laravel SaaS foundation from the Liberu ecosystem, designed to compose
 - Independently versioned modules installed into tracked `/modules` directories
 - Independently versioned themes installed into tracked `/themes` directories with inheritance and safe fallback
 - Architecture tests for manifests, dependency direction, package ownership, and presentation boundaries
+- ModuleRegistry dependency and cycle validation before provider boot
+- ThemeManager compatibility checks, inheritance resolution, and safe fallback behavior
 
-This is an application/infrastructure portfolio project, not an AI or agent system. Its evidence is in modular PHP architecture, package composition, tenancy-aware panels, testing and operational tooling; no AI capability is claimed here.
 
 ## Code map and evidence
 
 | Concern | Location | Evidence in this repository |
 |---|---|---|
 | Host composition | `app/`, `config/`, `routes/` | application bootstrapping, enabled module graph and panel/runtime configuration |
+| Module registry | `config/modules.php`, `modules/*/module.json` | ModuleRegistry dependency/cycle validation and provider ordering |
+| Theme manager | `themes/*/theme.json`, `themes/*/` | ThemeManager compatibility, inheritance and fallback behavior |
 | Reusable capabilities | `modules/*/` | tracked Composer modules with `composer.json`, `module.json`, README files and package tests |
 | Themes and fallback | `themes/*/` | tracked theme packages, compatibility metadata and asset tests |
 | Cross-package behaviour | `tests/` | architecture, module discovery, auth, tenancy, search, settings, theme and operational feature coverage |
-| Tooling | `scripts/`, `.claude/skills/`, `AGENTS.md` | component publishing, coverage/static-analysis helpers and project-specific development guidance |
+| Tooling | `.claude/skills/`, `AGENTS.md` | coverage/static-analysis guidance and project-specific development workflows |
 
 ## Requirements
 
@@ -118,7 +112,7 @@ The trusted [`liberusoftware/composer-installer`](https://github.com/liberusoftw
 
 `modules/` and `themes/` are intentionally kept out of `.gitignore`. Their reproduced contents are committed so deployments and reviews can see the exact installed code, while `composer.lock` pins each release and source commit. Do not edit an installed module only in this host: contribute the generic change to its package repository, release it, and update the Composer dependency here.
 
-Installation, runtime enablement, authorisation, and commercial entitlement are separate concerns. `config/modules.php` selects the enabled capability graph; the module manager validates dependencies and orders providers without scanning application classes manually.
+Installation, runtime enablement, authorisation, and commercial entitlement are separate concerns. `config/modules.php` selects the enabled capability graph; the ModuleRegistry validates dependencies, rejects cycles, and orders providers without scanning application classes manually.
 
 Every module also publishes a validated feature catalog in `module.json`. Hosts can inspect the complete catalog or search it without loading module internals:
 
@@ -145,7 +139,7 @@ database/ or resources/ when required
 tests/
 ```
 
-Themes contain `composer.json`, `theme.json`, source assets, compatibility metadata, accessibility/fallback expectations, tests, documentation, and asset licensing information. See the [module development guide](docs/MODULE_DEVELOPMENT.md) and [theme architecture](docs/THEME_ARCHITECTURE.md).
+Themes contain `composer.json`, `theme.json`, source assets, compatibility metadata, accessibility/fallback expectations, tests, documentation, and asset licensing information. The ThemeManager applies compatibility, inheritance, and fallback rules when the host selects a theme. See the [module development guide](docs/MODULE_DEVELOPMENT.md) and [theme architecture](docs/THEME_ARCHITECTURE.md).
 
 ## Testing and quality
 
@@ -158,27 +152,9 @@ npm run build
 
 The test suite exercises application behaviour and every installed module provider. Package architecture tests verify metadata, declared dependencies, host isolation, UI boundaries, and Composer ownership.
 
-### Publishing the component repositories
+### Packagist registration
 
-The publishing helper derives repository names from directory names, using
-`module-` for entries in `modules/` and `theme-` for entries in `themes/`. It
-also handles this complete meta repository as `boilerplate-laravel`.
-
-```bash
-# Inspect all mappings without changing GitHub
-scripts/publish-components
-
-# Create any missing public repositories in the organisation
-scripts/publish-components --create
-
-# After committing the complete worktree, split and push every component plus the meta repository
-scripts/publish-components --push
-```
-
-Publishing requires authenticated `gh` and `git` access to the organisation.
-Push mode deliberately refuses a dirty worktree because subtree splits can only
-publish committed content. Existing repositories are updated without force, so
-non-fast-forward histories must be reconciled explicitly rather than overwritten.
+The repository includes `scripts/submit-packagist.php` for verified package-to-repository mapping and optional Packagist registration.
 
 After the repositories are public, register every Composer package on Packagist:
 
