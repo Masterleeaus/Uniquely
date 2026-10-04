@@ -1,4 +1,4 @@
-![Liberu Laravel SaaS Foundation — UPSTREAM MULTI-TENANT LARAVEL FOUNDATION](docs/images/portfolio-banner.svg)
+![Uniquely — Liberu modular SaaS foundation composed from host application, Composer modules, themes, tenancy, and tests](docs/images/uniquely-banner.svg)
 
 # Liberu Laravel SaaS Foundation
 
@@ -13,6 +13,10 @@
 Liberu Boilerplate is the deployable reference host for the Liberu Composer ecosystem. It combines independently released capability, presentation, and theme packages while keeping application bootstrapping, environment configuration, panel composition, and cross-package tests in one place.
 
 ## Product architecture and engineering highlights
+
+<p align="center">
+  <img src="docs/images/uniquely-architecture.svg" alt="Uniquely composition flow from host application through Composer modules, themes, tenancy, and tests within the Liberu ecosystem." width="100%" />
+</p>
 
 A modular Laravel SaaS foundation from the Liberu ecosystem, designed to compose application features from reusable packages and modules.
 
