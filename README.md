@@ -1,14 +1,29 @@
 ![Liberu Laravel SaaS Foundation — UPSTREAM MULTI-TENANT LARAVEL FOUNDATION](docs/images/portfolio-banner.svg)
 
-# Liberu Laravel SaaS Foundation
+# Uniquely
 
-> Modular Laravel foundation for single-tenant and multi-tenant applications.
+## Liberu Laravel SaaS Foundation
+
+> A modular Laravel composition host for assembling SaaS capabilities, themes, and tenancy-aware application surfaces.
+
+Uniquely brings independently released Liberu modules, themes, contracts, and host-level configuration together in one reference application. It is designed for teams that want package-level reuse without losing visibility into bootstrapping, panel composition, environment configuration, and cross-package behavior.
 
 [Software](https://liberusoftware.com) · [Hosting](https://liberuhosting.com) · [Services](https://liberuservices.com) · [Liberu Group](https://liberugroup.com)
 
 [![PHP](https://img.shields.io/badge/PHP-8.5-777BB4?logo=php&logoColor=white)](https://www.php.net/) [![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)](https://laravel.com/) [![Filament](https://img.shields.io/badge/Filament-5-FDAE4B)](https://filamentphp.com/) [![Livewire](https://img.shields.io/badge/Livewire-4-FB70A9)](https://livewire.laravel.com/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg](LICENSE.md)
+
+## What Uniquely makes possible
+
+| Capability | Implementation evidence |
+|---|---|
+| Modular capability graph | `composer.json`, `config/modules.php`, and tracked `modules/*/` packages compose reusable application capabilities with explicit manifests and dependencies. |
+| Theme and presentation composition | `themes/*/` packages provide tracked assets, compatibility metadata, inheritance, and safe fallback behavior. |
+| Host-level integration | `app/`, `config/`, and `routes/` contain the application shell, enabled package graph, panel/runtime policy, and integration points. |
+| Cross-package engineering evidence | `tests/`, `scripts/`, `.claude/skills/`, and `AGENTS.md` support architecture checks, publishing, coverage, static analysis, and development workflows. |
+
+Uniquely is strongest as a composition and developer-experience asset: it shows how a Laravel product family can share capabilities while retaining package ownership, release boundaries, and a visible application host.
 
 Liberu Boilerplate is the deployable reference host for the Liberu Composer ecosystem. It combines independently released capability, presentation, and theme packages while keeping application bootstrapping, environment configuration, panel composition, and cross-package tests in one place.
 
