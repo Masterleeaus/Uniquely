@@ -2,13 +2,13 @@
 
 # Liberu Laravel SaaS Foundation
 
-> Production-ready Laravel foundation for modular, single-tenant and multi-tenant applications.
+> Modular Laravel foundation for single-tenant and multi-tenant applications.
 
 [Software](https://liberusoftware.com) · [Hosting](https://liberuhosting.com) · [Services](https://liberuservices.com) · [Liberu Group](https://liberugroup.com)
 
 [![PHP](https://img.shields.io/badge/PHP-8.5-777BB4?logo=php&logoColor=white)](https://www.php.net/) [![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)](https://laravel.com/) [![Filament](https://img.shields.io/badge/Filament-5-FDAE4B)](https://filamentphp.com/) [![Livewire](https://img.shields.io/badge/Livewire-4-FB70A9)](https://livewire.laravel.com/)
 
-[![Install](https://github.com/liberusoftware/boilerplate-laravel/actions/workflows/install.yml/badge.svg?branch=main)](https://github.com/liberusoftware/boilerplate-laravel/actions/workflows/install.yml) [![Tests](https://github.com/liberusoftware/boilerplate-laravel/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/liberusoftware/boilerplate-laravel/actions/workflows/tests.yml) [![Docker](https://github.com/liberusoftware/boilerplate-laravel/actions/workflows/docker.yml/badge.svg?branch=main)](https://github.com/liberusoftware/boilerplate-laravel/actions/workflows/docker.yml) [![Codecov](https://codecov.io/gh/liberusoftware/boilerplate-laravel/branch/main/graph/badge.svg)](https://codecov.io/gh/liberusoftware/boilerplate-laravel) [![Latest release](https://img.shields.io/github/v/release/liberusoftware/boilerplate-laravel?sort=semver)](https://github.com/liberusoftware/boilerplate-laravel/releases/latest) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg](LICENSE.md)
 
 Liberu Boilerplate is the deployable reference host for the Liberu Composer ecosystem. It combines independently released capability, presentation, and theme packages while keeping application bootstrapping, environment configuration, panel composition, and cross-package tests in one place.
 
@@ -30,6 +30,18 @@ A modular Laravel SaaS foundation from the Liberu ecosystem, designed to compose
 - Independently versioned themes installed into tracked `/themes` directories with inheritance and safe fallback
 - Architecture tests for manifests, dependency direction, package ownership, and presentation boundaries
 
+This is an application/infrastructure portfolio project, not an AI or agent system. Its evidence is in modular PHP architecture, package composition, tenancy-aware panels, testing and operational tooling; no AI capability is claimed here.
+
+## Code map and evidence
+
+| Concern | Location | Evidence in this repository |
+|---|---|---|
+| Host composition | `app/`, `config/`, `routes/` | application bootstrapping, enabled module graph and panel/runtime configuration |
+| Reusable capabilities | `modules/*/` | tracked Composer modules with `composer.json`, `module.json`, README files and package tests |
+| Themes and fallback | `themes/*/` | tracked theme packages, compatibility metadata and asset tests |
+| Cross-package behaviour | `tests/` | architecture, module discovery, auth, tenancy, search, settings, theme and operational feature coverage |
+| Tooling | `scripts/`, `.claude/skills/`, `AGENTS.md` | component publishing, coverage/static-analysis helpers and project-specific development guidance |
+
 ## Requirements
 
 | Dependency | Supported version |
@@ -45,8 +57,8 @@ A modular Laravel SaaS foundation from the Liberu ecosystem, designed to compose
 ## Quick start
 
 ```bash
-git clone https://github.com/liberusoftware/boilerplate-laravel.git
-cd boilerplate-laravel
+git clone https://github.com/Masterleeaus/Uniquely.git
+cd Uniquely
 composer install
 cp .env.example .env
 php artisan key:generate
