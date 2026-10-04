@@ -1,14 +1,14 @@
-![Liberu Laravel SaaS Foundation - UPSTREAM MULTI-TENANT LARAVEL FOUNDATION](docs/images/portfolio-banner.svg)
+![Liberu Laravel SaaS Foundation — UPSTREAM MULTI-TENANT LARAVEL FOUNDATION](docs/images/portfolio-banner.svg)
 
 # Liberu Laravel SaaS Foundation
 
 > Modular Laravel foundation for single-tenant and multi-tenant applications.
 
-[Software](https://liberusoftware.com) � [Hosting](https://liberuhosting.com) � [Services](https://liberuservices.com) � [Liberu Group](https://liberugroup.com)
+[Software](https://liberusoftware.com) · [Hosting](https://liberuhosting.com) · [Services](https://liberuservices.com) · [Liberu Group](https://liberugroup.com)
 
 [![PHP](https://img.shields.io/badge/PHP-8.5-777BB4?logo=php&logoColor=white)](https://www.php.net/) [![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)](https://laravel.com/) [![Filament](https://img.shields.io/badge/Filament-5-FDAE4B)](https://filamentphp.com/) [![Livewire](https://img.shields.io/badge/Livewire-4-FB70A9)](https://livewire.laravel.com/)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg](LICENSE.md)
 
 Liberu Boilerplate is the deployable reference host for the Liberu Composer ecosystem. It combines independently released capability, presentation, and theme packages while keeping application bootstrapping, environment configuration, panel composition, and cross-package tests in one place.
 
@@ -76,11 +76,11 @@ Each runtime capability is an independent `liberu-module` Composer package with 
 
 ```text
 Application composition
-��� modules/       # Composer-installed module releases, tracked in Git
-��� themes/        # Composer-installed theme releases, tracked in Git
-��� app/           # Host-only composition and integration
-��� config/        # Enabled modules and application policy
-��� tests/         # Cross-package and application tests
+├── modules/       # Composer-installed module releases, tracked in Git
+├── themes/        # Composer-installed theme releases, tracked in Git
+├── app/           # Host-only composition and integration
+├── config/        # Enabled modules and application policy
+└── tests/         # Cross-package and application tests
 ```
 
 Composer is the source of installation and version truth:
@@ -226,4 +226,3 @@ Feedback and contributions are welcome. Report reproducible bugs, propose focuse
 ## Contributors
 
 Thank you to everyone who helps improve Liberu. [View the contributors graph](https://github.com/liberusoftware/boilerplate-laravel/graphs/contributors).
-
