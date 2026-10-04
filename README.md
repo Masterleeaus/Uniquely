@@ -8,7 +8,58 @@
 
 > A Liberu-based Laravel SaaS foundation for assembling capabilities, themes, and tenancy-aware application surfaces.
 
+## Overview
+
 Uniquely brings independently released Liberu modules, themes, contracts, and host-level configuration together in one reference application. It is designed for teams that want package-level reuse without losing visibility into bootstrapping, panel composition, environment configuration, and cross-package behavior.
+
+
+## Measured evidence
+
+Uniquely has one of the strongest conventional software-quality snapshots in this portfolio.
+
+| Evidence | Verified snapshot / repository state | Reproduce / inspect |
+| --- | ---: | --- |
+| Installed Composer-style modules tracked in `/modules` | **40** | repository `modules/` tree |
+| Installed themes tracked in `/themes` | **4** | `base`, `clear-signal`, `dark`, `default` |
+| Test result at audited commit `41eba178...` | **203 passed / 12 skipped / 670 assertions** | workflow run 37183653563 |
+| Composer metadata validation | passed before test execution | `.github/workflows/tests.yml` |
+| Dependency audit | passed before test execution | `composer audit --locked` |
+| Pint | passed before test execution | workflow test lane |
+| PHPStan | passed before test execution | workflow test lane |
+| Test coverage gate | application host lane requires **99% minimum** | `php artisan test --coverage-clover=coverage.xml --min=99` |
+| Install workflow at audited commit | **successful** | workflow run 37183653444 |
+| Overall Tests workflow conclusion | **failed after tests** because Codecov rejected the tokenless upload | workflow run 37183653563 |
+| Docker workflow at audited commit | **failed** after a GitHub API rate-limit issue | workflow run 37183653487 |
+
+This is a **dated evidence snapshot from 4 October 2026**, not a claim about the moving `main` branch. The current branch has advanced since commit `41eba178...`; rerun CI before quoting these numbers as current release status.
+
+## What is new
+
+Uniquely's technical signature is **composition as a first-class runtime concern**: modules, themes and host policy are versioned separately, but the application validates how they fit together before treating the composition as usable.
+
+```text
+Composer package graph
+        ↓
+Tracked modules + themes
+        ↓
+Module metadata / dependencies
+        ↓
+Dependency + cycle validation
+        ↓
+Theme compatibility / inheritance / fallback
+        ↓
+Host panels + routes + application behavior
+```
+
+Distinctive engineering choices:
+
+- **Package ownership remains visible** — installed modules and themes are tracked rather than hidden entirely under `vendor/`.
+- **Installation and enablement are separate** — a package can exist in the application without automatically becoming active capability.
+- **Dependency order is explicit** — module metadata drives dependency validation and provider ordering.
+- **Theme variation is bounded** — compatibility, inheritance and fallback rules prevent a visual package from silently replacing application architecture.
+- **Cross-package behavior is tested at the host level** while reusable modules retain their own package boundaries.
+
+The project is strongest as a **modular Laravel composition reference**, not as an AI-system benchmark.
 
 [Software](https://liberusoftware.com) · [Hosting](https://liberuhosting.com) · [Services](https://liberuservices.com) · [Liberu Group](https://liberugroup.com)
 
@@ -16,7 +67,7 @@ Uniquely brings independently released Liberu modules, themes, contracts, and ho
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
-## What Uniquely makes possible
+## Verified capabilities
 
 | Capability | Implementation evidence |
 |---|---|
@@ -53,7 +104,7 @@ Uniquely is strongest as a composition and developer-experience asset: it shows 
 | Cross-package behaviour | `tests/` | architecture, module discovery, auth, tenancy, search, settings, theme and operational feature coverage |
 | Tooling | `.claude/skills/`, `AGENTS.md` | coverage/static-analysis guidance and project-specific development workflows |
 
-**Latest verification (2026-10-04).** The tested PR head [`41eba178036ae3cad36255c69a07ca2d3b7312ed`](https://github.com/Masterleeaus/Uniquely/commit/41eba178036ae3cad36255c69a07ca2d3b7312ed) passed Composer metadata validation, dependency installation, `composer audit --locked`, Pint, static analysis, and the test suite in [workflow run 37183653563](https://github.com/Masterleeaus/Uniquely/actions/runs/37183653563): **203 passed, 12 skipped, 670 assertions**. The Codecov upload separately failed because the external service rejected a tokenless upload, and the Docker metadata job separately hit a GitHub API rate limit; this evidence does not claim all CI is green.
+**Verification snapshot (2026-10-04).** At audited commit [`41eba178036ae3cad36255c69a07ca2d3b7312ed`](https://github.com/Masterleeaus/Uniquely/commit/41eba178036ae3cad36255c69a07ca2d3b7312ed), Composer metadata validation, dependency installation, `composer audit --locked`, Pint, PHPStan, and the application test run completed successfully with **203 passed, 12 skipped, 670 assertions**. The enclosing [Tests workflow run 37183653563](https://github.com/Masterleeaus/Uniquely/actions/runs/37183653563) still concluded **failure** because the later Codecov upload was rejected without a valid token. The separate Docker workflow also failed after a GitHub API rate-limit issue. Treat these as dated, component-level results rather than an all-green CI claim.
 
 ## Requirements
 
