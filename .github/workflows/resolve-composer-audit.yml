@@ -29,3 +29,5 @@ jobs:
           name: resolved-composer-lock
           path: composer.lock
           if-no-files-found: error
+
+      # Temporary resolver; remove before the dependency PR is finalized.
