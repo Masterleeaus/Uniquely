@@ -57,7 +57,7 @@ Distinctive engineering choices:
 - **Installation and enablement are separate** — a package can exist in the application without automatically becoming active capability.
 - **Dependency order is explicit** — module metadata drives dependency validation and provider ordering.
 - **Theme variation is bounded** — compatibility, inheritance and fallback rules prevent a visual package from silently replacing application architecture.
-- **Cross-package behavior is tested at the host level** while reusable modules retain their own package boundaries.
+- **Cross-package behavior is tested at the host level*** while reusable modules retain their own package boundaries.
 
 The project is strongest as a **modular Laravel composition reference**, not as an AI-system benchmark.
 
