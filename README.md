@@ -21,7 +21,7 @@ Uniquely brings independently released Liberu modules, themes, contracts, and ho
 | Module dependency and cycle validation | `config/modules.php`, `modules/*/module.json`, and the host ModuleRegistry validate declared dependencies, provider order, and cycles before boot. |
 | Theme compatibility and fallback | `themes/*/theme.json` metadata and the ThemeManager handle compatibility checks, inheritance, and safe fallback behavior. |
 | Host-level integration | `app/`, `config/`, and `routes/` contain the application shell, enabled package graph, panel/runtime policy, and integration points. |
-| Cross-package engineering evidence | `tests/`, `scripts/`, `.claude/skills/`, and `AGENTS.md` support architecture checks, publishing, coverage, static analysis, and development workflows. |
+| Cross-package engineering evidence | `tests/`, `.claude/skills/`, and `AGENTS.md` support architecture checks, coverage, static analysis, and development workflows. |
 
 Uniquely is strongest as a composition and developer-experience asset: it shows how a Laravel product family can share capabilities while retaining package ownership, release boundaries, and a visible application host.
 
