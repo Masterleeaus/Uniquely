@@ -1,0 +1,31 @@
+name: Resolve Composer audit updates
+
+on:
+  push:
+    branches:
+      - codex/audit-dependency-resolution-20261004
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          tools: composer:v2
+          coverage: none
+
+      - name: Resolve affected packages
+        run: composer update laravel/framework league/commonmark league/flysystem phpseclib/phpseclib --with-all-dependencies --no-interaction --no-progress --no-scripts
+
+      - name: Upload resolved lockfile
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resolved-composer-lock
+          path: composer.lock
+          if-no-files-found: error
