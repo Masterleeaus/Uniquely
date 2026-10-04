@@ -2,8 +2,6 @@
 
 # Uniquely
 
-
-
 <p align="center">
   <img src="docs/images/uniquely-architecture.svg" alt="Uniquely composition map from host application through Composer modules, themes, tenancy, and tests within the Liberu ecosystem." width="100%" />
 </p>
