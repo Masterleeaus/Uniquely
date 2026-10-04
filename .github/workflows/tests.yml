@@ -72,4 +72,5 @@ jobs:
           disable_search: true
           flags: unittests
           name: codecov-umbrella
-          fail_ci_if_error: true
+          # Coverage reporting is supplemental; repository tests remain the quality gate.
+          fail_ci_if_error: false
