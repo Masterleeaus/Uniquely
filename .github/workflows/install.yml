@@ -26,7 +26,7 @@ jobs:
           cache: 'npm'
 
       - name: Resolve Composer audit updates
-        run: composer update laravel/framework league/commonmark league/flysystem phpseclib/phpseclib --with-all-dependencies --no-interaction --no-progress --no-scripts
+        run: composer update laravel/framework league/commonmark league/flysystem phpseclib/phpseclib --with-all-dependencies --minimal-changes --no-interaction --no-progress --no-scripts
         env:
           COMPOSER_AUTH: '{"github-oauth":{"github.com":"${{ github.token }}"}}'
         continue-on-error: true
